@@ -89,14 +89,11 @@ export default function ContactPage() {
     setSubmitError("");
 
     try {
-      // Netlify Forms handling
-      const form = e.currentTarget;
-      const formDataObj = new FormData(form);
-
-      const response = await fetch("/", {
+      // Call Netlify Function
+      const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formDataObj as unknown as Record<string, string>).toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -281,19 +278,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <form
-                className="space-y-6"
-                onSubmit={handleSubmit}
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                {/* Honeypot field for spam prevention */}
-                <div style={{ display: 'none' }}>
-                  <input name="bot-field" />
-                </div>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-white mb-2">First Name *</label>
@@ -361,7 +346,6 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">Project Type *</label>
-                  <input type="hidden" name="projectType" value={formData.projectType} />
                   <Select value={formData.projectType} onValueChange={(value) => handleSelectChange("projectType", value)}>
                     <SelectTrigger className="bg-gray-900 border-accent-gold text-white">
                       <SelectValue placeholder="Select Project Type" />
@@ -394,7 +378,6 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">Estimated Budget</label>
-                  <input type="hidden" name="budget" value={formData.budget} />
                   <Select value={formData.budget} onValueChange={(value) => handleSelectChange("budget", value)}>
                     <SelectTrigger className="bg-gray-900 border-accent-gold text-white">
                       <SelectValue placeholder="Select Budget Range" />
@@ -424,7 +407,6 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-white mb-2">Project Timeline</label>
-                  <input type="hidden" name="timeline" value={formData.timeline} />
                   <Select value={formData.timeline} onValueChange={(value) => handleSelectChange("timeline", value)}>
                     <SelectTrigger className="bg-gray-900 border-accent-gold text-white">
                       <SelectValue placeholder="Select Timeline" />
