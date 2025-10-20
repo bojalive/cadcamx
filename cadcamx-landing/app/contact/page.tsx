@@ -1052,8 +1052,8 @@ export default function ContactPage() {
             </div>
 
             <p className="text-sm text-gray-400 italic">
-              "All shared files are protected under strict NDA and encrypted storage protocols. Your intellectual
-              property remains completely confidential throughout our collaboration."
+              &ldquo;All shared files are protected under strict NDA and encrypted storage protocols. Your intellectual
+              property remains completely confidential throughout our collaboration.&rdquo;
             </p>
           </div>
         </div>

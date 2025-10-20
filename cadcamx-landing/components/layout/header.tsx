@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaCube, FaBars } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
@@ -21,42 +22,42 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a
+            <Link
               href="/"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               About Us
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               href="/case-studies"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Case Studies
-            </a>
-            <a
+            </Link>
+            <Link
               href="/pricing"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Pricing
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
 
           {/* CTA Buttons */}
@@ -86,42 +87,42 @@ export function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 space-y-4">
-            <a
+            <Link
               href="/"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               About Us
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               href="/case-studies"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Case Studies
-            </a>
-            <a
+            </Link>
+            <Link
               href="/pricing"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Pricing
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         )}
       </div>

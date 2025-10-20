@@ -4,6 +4,7 @@ import {
   FaMicroscope,
   FaChartLine,
 } from "react-icons/fa";
+import { IconType } from "react-icons";
 
 export interface CaseStudy {
   slug: string;
@@ -34,7 +35,7 @@ export interface CaseStudy {
   tools: Array<{
     name: string;
     category: string;
-    icon: any;
+    icon: IconType;
   }>;
   results: Array<{
     value: string;

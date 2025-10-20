@@ -315,7 +315,7 @@ export default function PricingPage() {
             <Card className="bg-accent-gold text-primary-dark inline-block">
               <CardContent className="p-8">
                 <h3 className="text-3xl font-bold mb-2">You Save: $78,400/year</h3>
-                <p className="text-xl font-semibold">That's 65% Cost Reduction!</p>
+                <p className="text-xl font-semibold">That&apos;s 65% Cost Reduction!</p>
               </CardContent>
             </Card>
           </div>
@@ -736,7 +736,7 @@ export default function PricingPage() {
                     Get Custom Estimate
                   </Button>
                   <p className="text-sm text-gray-400 mt-4">
-                    You'll receive a detailed quote within 24 hours. No spam, guaranteed.
+                    You&apos;ll receive a detailed quote within 24 hours. No spam, guaranteed.
                   </p>
                 </div>
               </form>

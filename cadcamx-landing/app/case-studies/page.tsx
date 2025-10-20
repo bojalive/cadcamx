@@ -497,7 +497,7 @@ export default function CaseStudiesPage() {
                   <div className="text-gray-300 text-sm">Complex geometries and simultaneous 5-axis strategies</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">±0.0001"</div>
+                  <div className="text-4xl font-bold text-white mb-2">±0.0001&quot;</div>
                   <div className="text-lg text-accent-gold font-medium mb-2">Precision Tolerance</div>
                   <div className="text-gray-300 text-sm">Micro-precision manufacturing capabilities</div>
                 </div>

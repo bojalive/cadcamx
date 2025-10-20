@@ -1166,8 +1166,8 @@ export default function ServicesPage() {
                   ))}
                 </div>
                 <p className="text-white/80 italic">
-                  "CADCAMX delivered exceptional 3D modeling services for our new engine component line.
-                  Their attention to detail and manufacturing expertise saved us months of development time."
+                  &ldquo;CADCAMX delivered exceptional 3D modeling services for our new engine component line.
+                  Their attention to detail and manufacturing expertise saved us months of development time.&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -1193,8 +1193,8 @@ export default function ServicesPage() {
                   ))}
                 </div>
                 <p className="text-white/80 italic">
-                  "Outstanding FEA analysis for our medical device project. The simulation results were
-                  accurate and helped us optimize the design for FDA approval. Highly recommended!"
+                  &ldquo;Outstanding FEA analysis for our medical device project. The simulation results were
+                  accurate and helped us optimize the design for FDA approval. Highly recommended!&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -1220,8 +1220,8 @@ export default function ServicesPage() {
                   ))}
                 </div>
                 <p className="text-white/80 italic">
-                  "Their CAM programming expertise is unmatched. Complex aerospace parts were programmed
-                  efficiently with optimized toolpaths that reduced machining time by 30%."
+                  &ldquo;Their CAM programming expertise is unmatched. Complex aerospace parts were programmed
+                  efficiently with optimized toolpaths that reduced machining time by 30%.&rdquo;
                 </p>
               </CardContent>
             </Card>

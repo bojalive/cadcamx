@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -13,7 +14,7 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
-import { caseStudiesData, CaseStudy } from "@/lib/case-studies-data";
+import { caseStudiesData } from "@/lib/case-studies-data";
 
 export default function CaseStudyDetail() {
   const params = useParams();
@@ -27,10 +28,10 @@ export default function CaseStudyDetail() {
         <div className="container mx-auto px-8 py-32 text-center">
           <h1 className="text-4xl font-bold mb-4">Case Study Not Found</h1>
           <p className="text-gray-400 mb-8">
-            The case study you're looking for doesn't exist or has been moved.
+            The case study you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
           <Button asChild className="bg-gradient-to-r from-accent-gold to-accent-orange text-primary-dark">
-            <a href="/case-studies">Back to Case Studies</a>
+            <Link href="/case-studies">Back to Case Studies</Link>
           </Button>
         </div>
         <Footer />
@@ -101,7 +102,7 @@ export default function CaseStudyDetail() {
                 <div>
                   <h2 className="text-2xl font-bold text-accent-gold mb-6">Our Approach</h2>
                   <div className="space-y-6">
-                    {caseStudy.approach.phases.map((phase: any, index: number) => (
+                    {caseStudy.approach.phases.map((phase, index: number) => (
                       <Card key={index} className="bg-white/5 border-accent-gold/20">
                         <CardContent className="p-6">
                           <h3 className="text-lg font-bold text-white mb-3">{phase.title}</h3>
@@ -118,7 +119,7 @@ export default function CaseStudyDetail() {
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-accent-gold mb-6 text-center">Tools & Technologies Used</h2>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {caseStudy.tools.map((tool: any, index: number) => (
+                    {caseStudy.tools.map((tool, index: number) => (
                       <div key={index} className="text-center">
                         <div className="bg-white/10 rounded-lg p-4 mb-3">
                           <tool.icon className="text-accent-gold text-2xl mx-auto" />
@@ -136,7 +137,7 @@ export default function CaseStudyDetail() {
                 <div className="lg:col-span-2">
                   <h2 className="text-2xl font-bold text-accent-gold mb-6">Quantified Results</h2>
                   <div className="grid grid-cols-2 gap-6">
-                    {caseStudy.results.map((result: any, index: number) => (
+                    {caseStudy.results.map((result, index: number) => (
                       <Card key={index} className="bg-white/5 border-accent-gold/20 text-center">
                         <CardContent className="p-6">
                           <div className="text-4xl font-bold text-accent-gold mb-2">{result.value}</div>
