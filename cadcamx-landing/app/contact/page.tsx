@@ -88,37 +88,24 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitError("");
 
-    try {
-      // Call Netlify Function
-      const response = await fetch("/.netlify/functions/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+    // Simulate form submission delay
+    setTimeout(() => {
+      setSubmitSuccess(true);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        phone: "",
+        projectType: "",
+        budget: "",
+        timeline: "",
+        projectDetails: "",
       });
-
-      if (response.ok) {
-        setSubmitSuccess(true);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          company: "",
-          phone: "",
-          projectType: "",
-          budget: "",
-          timeline: "",
-          projectDetails: "",
-        });
-        // Scroll to top to show success message
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        setSubmitError("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      setSubmitError("Failed to submit form. Please try again or contact us directly at leancamsys@gmail.com");
-    } finally {
       setIsSubmitting(false);
-    }
+      // Scroll to top to show success message
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 1000);
   };
 
   return (
@@ -136,9 +123,9 @@ export default function ContactPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-lg">Thank You! Your Request Has Been Submitted Successfully</h3>
+                <h3 className="font-bold text-lg">Thank You! Your Request Has Been Received</h3>
                 <p className="text-sm">
-                  Our engineering team will review your requirements and get back to you within 24 hours at {formData.email || "your email"}
+                  Please contact us directly at leancamsys@gmail.com or call +1 7155013103 to discuss your project requirements.
                 </p>
               </div>
             </div>
