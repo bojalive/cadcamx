@@ -9,7 +9,7 @@ export const emailConfig = {
     secure: false, // true for 465, false for other ports
     auth: {
       user: "leancamsys@gmail.com",
-      pass: "your_app_password_here", // Get this from Gmail App Passwords
+      pass: "sslpokgrbaoypatl", // Gmail App Password (spaces removed)
     },
   },
 

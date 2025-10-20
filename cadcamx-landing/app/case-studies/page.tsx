@@ -521,13 +521,24 @@ export default function CaseStudiesPage() {
             services. Start your success story today.
           </p>
           <div className="flex flex-wrap justify-center gap-6 mb-16">
-            <Button className="bg-gradient-to-r from-accent-gold to-accent-orange text-primary-dark font-bold px-8 py-6 text-lg hover:shadow-lg">
+            <Button
+              onClick={() => window.location.href = '/contact'}
+              className="bg-gradient-to-r from-accent-gold to-accent-orange text-primary-dark font-bold px-8 py-6 text-lg hover:shadow-lg"
+            >
               Start Your Project Today
             </Button>
-            <Button variant="outline" className="border-white/20 text-white px-8 py-6 text-lg hover:bg-white/20">
+            <Button
+              onClick={() => window.location.href = '/contact'}
+              variant="outline"
+              className="border-white/20 text-white px-8 py-6 text-lg hover:bg-white/20"
+            >
               Download Case Studies PDF
             </Button>
-            <Button variant="outline" className="border-accent-gold text-accent-gold px-8 py-6 text-lg hover:bg-accent-gold/10">
+            <Button
+              onClick={() => window.location.href = '/contact'}
+              variant="outline"
+              className="border-accent-gold text-accent-gold px-8 py-6 text-lg hover:bg-accent-gold/10"
+            >
               Schedule Free Consultation
             </Button>
           </div>

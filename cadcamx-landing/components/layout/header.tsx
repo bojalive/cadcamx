@@ -63,11 +63,15 @@ export function Header() {
           <div className="flex items-center space-x-4">
             <Button
               variant="outline"
+              onClick={() => window.location.href = '/contact'}
               className="hidden md:block border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-primary-dark"
             >
               Get Quote
             </Button>
-            <Button className="bg-gradient-to-r from-accent-gold to-accent-orange text-primary-dark hover:shadow-lg hover:shadow-accent-gold/25 font-bold">
+            <Button
+              onClick={() => window.location.href = '/contact'}
+              className="bg-gradient-to-r from-accent-gold to-accent-orange text-primary-dark hover:shadow-lg hover:shadow-accent-gold/25 font-bold"
+            >
               Start Project
             </Button>
             <button

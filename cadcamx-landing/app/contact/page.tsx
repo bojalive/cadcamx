@@ -254,7 +254,10 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">Live Chat</h3>
                 <p className="text-gray-300 mb-4">Instant support for quick questions</p>
-                <Button className="bg-accent-gold text-primary-dark hover:bg-accent-orange font-semibold">
+                <Button
+                  onClick={() => window.open('https://wa.me/17155013103?text=Hi%2C%20I%20need%20help', '_blank')}
+                  className="bg-accent-gold text-primary-dark hover:bg-accent-orange font-semibold"
+                >
                   Start Chat
                 </Button>
                 <p className="text-sm text-gray-400 mt-2">Available 24/7</p>
@@ -958,10 +961,10 @@ export default function ContactPage() {
 
                   <div className="space-y-6">
                     {[
-                      { icon: FaPhone, title: "Phone Support", description: "Direct line to engineering team" },
-                      { icon: FaEnvelope, title: "Email Support", description: "Detailed project discussions" },
-                      { icon: FaVideo, title: "Video Consultation", description: "Screen sharing and live demos" },
-                      { icon: FaWhatsapp, title: "WhatsApp Business", description: "Quick questions and updates" },
+                      { icon: FaPhone, title: "Phone Support", description: "Direct line to engineering team", action: () => window.location.href = 'tel:+17155013103' },
+                      { icon: FaEnvelope, title: "Email Support", description: "Detailed project discussions", action: () => window.location.href = 'mailto:leancamsys@gmail.com' },
+                      { icon: FaVideo, title: "Video Consultation", description: "Screen sharing and live demos", action: () => window.location.href = '/contact' },
+                      { icon: FaWhatsapp, title: "WhatsApp Business", description: "Quick questions and updates", action: () => window.open('https://wa.me/17155013103', '_blank') },
                     ].map((option, idx) => (
                       <div
                         key={idx}
@@ -974,7 +977,10 @@ export default function ContactPage() {
                             <div className="text-sm text-gray-400">{option.description}</div>
                           </div>
                         </div>
-                        <Button className="bg-accent-gold text-primary-dark px-4 py-2 hover:bg-accent-orange font-semibold">
+                        <Button
+                          onClick={option.action}
+                          className="bg-accent-gold text-primary-dark px-4 py-2 hover:bg-accent-orange font-semibold"
+                        >
                           {idx === 0 ? "Call Now" : idx === 1 ? "Send Email" : idx === 2 ? "Schedule" : "Message"}
                         </Button>
                       </div>
@@ -989,7 +995,10 @@ export default function ContactPage() {
                     <p className="text-sm text-gray-300 mb-4">
                       Book a 30-minute consultation to discuss your project requirements with our senior engineers.
                     </p>
-                    <Button className="w-full bg-accent-gold text-primary-dark py-3 hover:bg-accent-orange font-semibold">
+                    <Button
+                      onClick={() => window.location.href = '/contact'}
+                      className="w-full bg-accent-gold text-primary-dark py-3 hover:bg-accent-orange font-semibold"
+                    >
                       Book Consultation
                     </Button>
                   </div>

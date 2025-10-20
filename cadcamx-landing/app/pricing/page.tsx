@@ -147,7 +147,10 @@ export default function PricingPage() {
                   ))}
                 </div>
 
-                <Button className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold">
+                <Button
+                  onClick={() => window.location.href = '/contact'}
+                  className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold"
+                >
                   Start Hourly Project
                 </Button>
               </CardContent>
@@ -188,7 +191,10 @@ export default function PricingPage() {
                   ))}
                 </div>
 
-                <Button className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold">
+                <Button
+                  onClick={() => window.location.href = '/contact'}
+                  className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold"
+                >
                   Get Project Quote
                 </Button>
               </CardContent>
@@ -223,7 +229,10 @@ export default function PricingPage() {
                   ))}
                 </div>
 
-                <Button className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold">
+                <Button
+                  onClick={() => window.location.href = '/contact'}
+                  className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold"
+                >
                   Build Your Team
                 </Button>
               </CardContent>
@@ -448,7 +457,10 @@ export default function PricingPage() {
                     ))}
                   </div>
 
-                  <Button className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold">
+                  <Button
+                    onClick={() => window.location.href = '/contact'}
+                    className="w-full bg-accent-gold text-primary-dark hover:bg-accent-orange font-bold"
+                  >
                     Get {industry.title} Quote
                   </Button>
                 </CardContent>
@@ -531,7 +543,10 @@ export default function PricingPage() {
                       className="object-cover"
                     />
                   </div>
-                  <Button className="bg-accent-gold text-primary-dark px-8 py-4 text-lg font-bold hover:bg-accent-orange">
+                  <Button
+                    onClick={() => window.location.href = '/contact'}
+                    className="bg-accent-gold text-primary-dark px-8 py-4 text-lg font-bold hover:bg-accent-orange"
+                  >
                     Start Your Project Today
                   </Button>
                 </div>
@@ -715,7 +730,7 @@ export default function PricingPage() {
 
                 <div className="text-center">
                   <Button
-                    type="submit"
+                    onClick={(e) => { e.preventDefault(); window.location.href = '/contact'; }}
                     className="bg-accent-gold text-primary-dark px-12 py-4 text-lg font-bold hover:bg-accent-orange shadow-lg shadow-accent-gold/20"
                   >
                     Get Custom Estimate
@@ -828,10 +843,14 @@ export default function PricingPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button className="bg-accent-gold text-primary-dark px-12 py-4 text-xl font-bold hover:bg-accent-orange shadow-lg shadow-accent-gold/20">
+            <Button
+              onClick={() => window.location.href = '/contact'}
+              className="bg-accent-gold text-primary-dark px-12 py-4 text-xl font-bold hover:bg-accent-orange shadow-lg shadow-accent-gold/20"
+            >
               Get Custom Estimate
             </Button>
             <Button
+              onClick={() => window.location.href = '/contact'}
               variant="outline"
               className="border-2 border-accent-gold text-accent-gold px-12 py-4 text-xl font-bold hover:bg-accent-gold hover:text-primary-dark"
             >

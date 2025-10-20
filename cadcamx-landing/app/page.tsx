@@ -89,7 +89,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button className="bg-gradient-to-r from-accent-gold to-accent-orange text-primary-dark px-8 py-6 text-lg font-bold hover:shadow-lg hover:shadow-accent-gold/25 hover-scale">
+              <Button
+                onClick={() => window.location.href = '/contact'}
+                className="bg-gradient-to-r from-accent-gold to-accent-orange text-primary-dark px-8 py-6 text-lg font-bold hover:shadow-lg hover:shadow-accent-gold/25 hover-scale"
+              >
                 <FaRocket className="mr-2" />
                 Start Your Project
               </Button>
@@ -630,6 +633,7 @@ export default function Home() {
                 </ul>
 
                 <Button
+                  onClick={() => window.location.href = '/contact'}
                   variant="outline"
                   className="w-full border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-primary-dark"
                 >
@@ -672,7 +676,10 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <Button className="w-full bg-accent-gold text-primary-dark hover:shadow-lg hover:shadow-accent-gold/25 font-bold">
+                <Button
+                  onClick={() => window.location.href = '/contact'}
+                  className="w-full bg-accent-gold text-primary-dark hover:shadow-lg hover:shadow-accent-gold/25 font-bold"
+                >
                   Get Started
                 </Button>
               </CardContent>
