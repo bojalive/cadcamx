@@ -8,9 +8,3 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-
-# Increase function size limits
-[[functions]]
-  name = "___netlify-server-handler"
-  included_files = []
-  external_node_modules = ["sharp"]
