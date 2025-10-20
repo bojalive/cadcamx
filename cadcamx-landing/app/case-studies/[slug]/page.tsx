@@ -1,6 +1,3 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/header";
@@ -16,9 +13,14 @@ import {
 } from "react-icons/fa";
 import { caseStudiesData } from "@/lib/case-studies-data";
 
-export default function CaseStudyDetail() {
-  const params = useParams();
-  const slug = params.slug as string;
+export function generateStaticParams() {
+  return caseStudiesData.map((cs) => ({
+    slug: cs.slug,
+  }));
+}
+
+export default function CaseStudyDetail({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const caseStudy = caseStudiesData.find((cs) => cs.slug === slug);
 
   if (!caseStudy) {
