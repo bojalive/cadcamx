@@ -22,37 +22,37 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <a
-              href="#home"
+              href="/"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Home
             </a>
             <a
-              href="#about"
+              href="/about"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               About Us
             </a>
             <a
-              href="#services"
+              href="/services"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Services
             </a>
             <a
-              href="#showcase"
+              href="/case-studies"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Case Studies
             </a>
             <a
-              href="#pricing"
+              href="/pricing"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Pricing
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="text-white hover:text-accent-gold transition-colors font-medium cursor-pointer"
             >
               Contact Us
@@ -83,37 +83,37 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 space-y-4">
             <a
-              href="#home"
+              href="/"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Home
             </a>
             <a
-              href="#about"
+              href="/about"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               About Us
             </a>
             <a
-              href="#services"
+              href="/services"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Services
             </a>
             <a
-              href="#showcase"
+              href="/case-studies"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Case Studies
             </a>
             <a
-              href="#pricing"
+              href="/pricing"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Pricing
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="block text-white hover:text-accent-gold transition-colors font-medium"
             >
               Contact Us

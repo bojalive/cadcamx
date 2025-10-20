@@ -128,14 +128,24 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-center mb-4 md:mb-0">
-              <p className="text-gray-400 font-medium">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 font-medium mb-2">
                 Secure Data • Confidential Projects • Fast Delivery
               </p>
+              <p className="text-gray-500 text-sm">
+                Talent Scope Consulting Inc. | +1 7155013103 | leancamsys@gmail.com
+              </p>
+              <p className="text-gray-500 text-sm">
+                US Office: 8th Green Street, Delaware, United States
+              </p>
+              <p className="text-gray-500 text-sm">
+                ODC: No. 11/4, Pooja Garden, Kalapatti Main Rd, Indira Nagar, Civil Aerodrome Post, Coimbatore, Tamil Nadu 641014
+              </p>
             </div>
-            <div className="text-gray-500 text-sm">
-              <p>&copy; 2024 CADCAMX. All rights reserved.</p>
+            <div className="text-gray-500 text-sm text-center md:text-right">
+              <p>&copy; 2024 Talent Scope Consulting Inc.</p>
+              <p>All rights reserved.</p>
             </div>
           </div>
         </div>

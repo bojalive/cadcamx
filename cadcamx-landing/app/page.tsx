@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { HashNavigation } from "@/components/hash-navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -48,11 +49,12 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-primary-dark text-white scroll-smooth">
+      <HashNavigation />
       <Header />
 
       {/* Hero Section */}
       <section
-        id="hero"
+        id="home"
         className="relative h-[900px] flex items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-blue-900 to-primary-dark"></div>
@@ -133,8 +135,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust & Capability Highlights */}
-      <section id="trust-section" className="py-20 bg-gray-900/50">
+      {/* Trust & Capability Highlights - About Section */}
+      <section id="about" className="py-20 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
