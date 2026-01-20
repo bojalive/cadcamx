@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaCube, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export function Footer() {
@@ -7,26 +8,41 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
+            <Link href="/" className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-gradient-to-r from-accent-gold to-accent-orange rounded-lg flex items-center justify-center">
                 <FaCube className="text-primary-dark text-lg" />
               </div>
               <span className="text-2xl font-bold gradient-text">CADCAMX</span>
-            </div>
+            </Link>
             <p className="text-gray-400 mb-6">
               Professional offshore CAD/CAM services delivering excellence at
               affordable rates.
             </p>
             <div className="flex space-x-4">
-              <span className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-gold hover:text-primary-dark transition-all cursor-pointer">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-gold hover:text-primary-dark transition-all cursor-pointer"
+              >
                 <FaLinkedin />
-              </span>
-              <span className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-gold hover:text-primary-dark transition-all cursor-pointer">
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-gold hover:text-primary-dark transition-all cursor-pointer"
+              >
                 <FaTwitter />
-              </span>
-              <span className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-gold hover:text-primary-dark transition-all cursor-pointer">
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-gold hover:text-primary-dark transition-all cursor-pointer"
+              >
                 <FaYoutube />
-              </span>
+              </a>
             </div>
           </div>
 
@@ -35,29 +51,44 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-6 text-white">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/services/2d-drafting"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   2D Drafting
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/services/3d-modeling"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   3D Modeling
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/services/cam-programming"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   CAM Programming
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/services/reverse-engineering"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Reverse Engineering
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/services/simulation"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Simulation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -67,29 +98,44 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-6 text-white">Company</h4>
             <ul className="space-y-3">
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/about"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/case-studies"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Case Studies
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/careers"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/blog"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/contact"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -99,29 +145,44 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-6 text-white">Support</h4>
             <ul className="space-y-3">
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/help-center"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Help Center
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/documentation"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Documentation
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/privacy-policy"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/terms-of-service"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-gray-400 hover:text-accent-gold transition-colors cursor-pointer">
+                <Link
+                  href="/security"
+                  className="text-gray-400 hover:text-accent-gold transition-colors"
+                >
                   Security
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -144,7 +205,7 @@ export function Footer() {
               </p>
             </div>
             <div className="text-gray-500 text-sm text-center md:text-right">
-              <p>&copy; 2024 Talent Scope Consulting Inc.</p>
+              <p>&copy; {new Date().getFullYear()} Talent Scope Consulting Inc.</p>
               <p>All rights reserved.</p>
             </div>
           </div>
