@@ -986,6 +986,11 @@ import { allMetroRegionalPages } from "./seo-pages-metro-regions";
 import { allUseCasePages } from "./seo-pages-usecases";
 import { allSoftwareServiceIndustryPages } from "./seo-pages-software-service-industry";
 
+// NEW: Import Phase 3 pages (280+ additional)
+import { allComparisonPages } from "./seo-pages-comparisons";
+import { allMigrationPages } from "./seo-pages-migrations";
+import { allCertificationPages } from "./seo-pages-certifications";
+
 // Re-export extended page arrays for direct access
 export { softwarePages, moreIndustryPages, useCasePages, comparisonPages };
 export { locationPages, statePages, cityPages };
@@ -1001,6 +1006,11 @@ export { allMetroRegionalPages } from "./seo-pages-metro-regions";
 // NEW: Re-export Phase 2 pages
 export { allUseCasePages } from "./seo-pages-usecases";
 export { allSoftwareServiceIndustryPages } from "./seo-pages-software-service-industry";
+
+// NEW: Re-export Phase 3 pages
+export { allComparisonPages } from "./seo-pages-comparisons";
+export { allMigrationPages } from "./seo-pages-migrations";
+export { allCertificationPages } from "./seo-pages-certifications";
 
 // ===========================================
 // HELPER FUNCTIONS
@@ -1027,6 +1037,10 @@ export const allSEOPages: SEOPageData[] = [
   // NEW: Phase 2 pages (400+ additional)
   ...allUseCasePages,           // 200+ pages: Use Cases × Industries
   ...allSoftwareServiceIndustryPages, // 200+ pages: Software × Service × Industry
+  // NEW: Phase 3 pages (280+ additional)
+  ...allComparisonPages,        // ~70 pages: Competitor comparisons
+  ...allMigrationPages,         // ~80 pages: Software migrations & conversions
+  ...allCertificationPages,     // ~56 pages: Certification compliance
 ];
 
 export function getSEOPageBySlug(slug: string): SEOPageData | undefined {
