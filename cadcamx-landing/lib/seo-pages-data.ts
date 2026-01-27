@@ -976,11 +976,23 @@ import { stateIndustryPages } from "./seo-pages-state-industry";
 import { softwareIndustryPages, softwareCityPages } from "./seo-pages-software-combos";
 import { longtailPages } from "./seo-pages-longtail";
 
+// NEW: Import 2000+ additional SEO pages
+import { serviceLocationPages } from "./seo-pages-service-locations";
+import { allSubVerticalPages } from "./seo-pages-sub-verticals";
+import { problemSolutionPages } from "./seo-pages-problems";
+import { allMetroRegionalPages } from "./seo-pages-metro-regions";
+
 // Re-export extended page arrays for direct access
 export { softwarePages, moreIndustryPages, useCasePages, comparisonPages };
 export { locationPages, statePages, cityPages };
 export { detailedServicePages, problemPages, alternativePages };
 export { cityIndustryPages, stateIndustryPages, softwareIndustryPages, softwareCityPages, longtailPages };
+
+// NEW: Re-export 2000+ additional SEO pages
+export { serviceLocationPages } from "./seo-pages-service-locations";
+export { allSubVerticalPages } from "./seo-pages-sub-verticals";
+export { problemSolutionPages } from "./seo-pages-problems";
+export { allMetroRegionalPages } from "./seo-pages-metro-regions";
 
 // ===========================================
 // HELPER FUNCTIONS
@@ -999,6 +1011,11 @@ export const allSEOPages: SEOPageData[] = [
   ...softwareIndustryPages,
   ...softwareCityPages,
   ...longtailPages,
+  // NEW: 2000+ additional SEO pages
+  ...serviceLocationPages,      // 600 pages: Service × Location
+  ...allSubVerticalPages,       // 400 pages: Industry sub-verticals
+  ...problemSolutionPages,      // 300 pages: Problem-Solution × Location
+  ...allMetroRegionalPages,     // 300 pages: Metro & Regional
 ];
 
 export function getSEOPageBySlug(slug: string): SEOPageData | undefined {
