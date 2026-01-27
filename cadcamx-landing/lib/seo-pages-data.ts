@@ -976,11 +976,15 @@ import { stateIndustryPages } from "./seo-pages-state-industry";
 import { softwareIndustryPages, softwareCityPages } from "./seo-pages-software-combos";
 import { longtailPages } from "./seo-pages-longtail";
 
-// NEW: Import 2000+ additional SEO pages
+// NEW: Import 2000+ additional SEO pages (Phase 1)
 import { serviceLocationPages } from "./seo-pages-service-locations";
 import { allSubVerticalPages } from "./seo-pages-sub-verticals";
 import { problemSolutionPages } from "./seo-pages-problems";
 import { allMetroRegionalPages } from "./seo-pages-metro-regions";
+
+// NEW: Import Phase 2 pages (400+ additional)
+import { allUseCasePages } from "./seo-pages-usecases";
+import { allSoftwareServiceIndustryPages } from "./seo-pages-software-service-industry";
 
 // Re-export extended page arrays for direct access
 export { softwarePages, moreIndustryPages, useCasePages, comparisonPages };
@@ -988,11 +992,15 @@ export { locationPages, statePages, cityPages };
 export { detailedServicePages, problemPages, alternativePages };
 export { cityIndustryPages, stateIndustryPages, softwareIndustryPages, softwareCityPages, longtailPages };
 
-// NEW: Re-export 2000+ additional SEO pages
+// NEW: Re-export 2000+ additional SEO pages (Phase 1)
 export { serviceLocationPages } from "./seo-pages-service-locations";
 export { allSubVerticalPages } from "./seo-pages-sub-verticals";
 export { problemSolutionPages } from "./seo-pages-problems";
 export { allMetroRegionalPages } from "./seo-pages-metro-regions";
+
+// NEW: Re-export Phase 2 pages
+export { allUseCasePages } from "./seo-pages-usecases";
+export { allSoftwareServiceIndustryPages } from "./seo-pages-software-service-industry";
 
 // ===========================================
 // HELPER FUNCTIONS
@@ -1011,11 +1019,14 @@ export const allSEOPages: SEOPageData[] = [
   ...softwareIndustryPages,
   ...softwareCityPages,
   ...longtailPages,
-  // NEW: 2000+ additional SEO pages
+  // NEW: 2000+ additional SEO pages (Phase 1)
   ...serviceLocationPages,      // 600 pages: Service × Location
   ...allSubVerticalPages,       // 400 pages: Industry sub-verticals
   ...problemSolutionPages,      // 300 pages: Problem-Solution × Location
   ...allMetroRegionalPages,     // 300 pages: Metro & Regional
+  // NEW: Phase 2 pages (400+ additional)
+  ...allUseCasePages,           // 200+ pages: Use Cases × Industries
+  ...allSoftwareServiceIndustryPages, // 200+ pages: Software × Service × Industry
 ];
 
 export function getSEOPageBySlug(slug: string): SEOPageData | undefined {
