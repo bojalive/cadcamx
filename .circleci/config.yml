@@ -1,0 +1,78 @@
+version: 2.1
+
+jobs:
+  deploy:
+    docker:
+      - image: cimg/node:22.11
+    working_directory: ~/project/cadcamx-landing
+    steps:
+      - checkout:
+          path: ~/project
+      - restore_cache:
+          keys:
+            - v1-deps-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - save_cache:
+          key: v1-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+      - run:
+          name: Build Next.js static export
+          command: npm run build
+      - run:
+          name: Report out/ size and file count
+          command: |
+            set +o pipefail
+            echo "Total files: $(find out -type f | wc -l)"
+            echo "Total size:  $(du -sh out | cut -f1)"
+            echo "Top 10 directories by file count:"
+            find out -type f -printf '%h\n' | sort | uniq -c | sort -rn | head -10
+            echo "File counts by extension:"
+            find out -type f -name '*.*' | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -10
+            echo "Sample route folder contents:"
+            SAMPLE_DIR=$(find out/solutions -mindepth 1 -maxdepth 1 -type d -print -quit)
+            if [ -n "$SAMPLE_DIR" ]; then ls -la "$SAMPLE_DIR"; fi
+            echo "Sample files directly in out/solutions/:"
+            find out/solutions -maxdepth 1 -type f | head -5
+            true
+      - run:
+          name: Trim per-route artifacts to stay under Pages 20k file limit
+          command: |
+            echo "Before trim: $(find out -type f | wc -l) files"
+            # RSC payloads (soft-nav data)
+            find out -type f \( -name '*.txt' -o -name '*.rsc' \) -delete
+            # Per-route Next.js data/prefetch JSON (kept HTML only in route folders)
+            find out -type f -path 'out/solutions/*' ! -name 'index.html' -delete
+            find out -type f -path 'out/glossary/*' ! -name 'index.html' -delete
+            find out -type f -path 'out/blog/*' ! -name 'index.html' -delete
+            find out -type f -path 'out/case-studies/*' ! -name 'index.html' -delete
+            # Sweep empty dirs left behind
+            find out -type d -empty -delete
+            echo "After trim:  $(find out -type f | wc -l) files"
+      - run:
+          name: Install Wrangler
+          command: npm install --no-save wrangler@latest
+      - run:
+          name: Deploy to Cloudflare Pages
+          command: |
+            BRANCH_FLAG=""
+            if [ "$CIRCLE_BRANCH" != "main" ]; then
+              BRANCH_FLAG="--branch=$CIRCLE_BRANCH"
+            fi
+            npx wrangler pages deploy out \
+              --project-name="$CLOUDFLARE_PAGES_PROJECT" \
+              --commit-hash="$CIRCLE_SHA1" \
+              --commit-message="$(git log -1 --pretty=%s)" \
+              $BRANCH_FLAG
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - main
+                - claude/circleci-cloudflare-pages-deploy-4badX
