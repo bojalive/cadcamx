@@ -31,6 +31,13 @@ jobs:
             echo "File counts by extension:"
             find out -type f -name '*.*' | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -10
       - run:
+          name: Trim RSC payloads to stay under Pages 20k file limit
+          command: |
+            echo "Before trim: $(find out -type f | wc -l) files"
+            find out -type f -name '*.txt' -delete
+            find out -type f -name '*.rsc' -delete
+            echo "After trim:  $(find out -type f | wc -l) files"
+      - run:
           name: Install Wrangler
           command: npm install --no-save wrangler@latest
       - run:
