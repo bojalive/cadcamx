@@ -22,6 +22,15 @@ jobs:
           name: Build Next.js static export
           command: npm run build
       - run:
+          name: Report out/ size and file count
+          command: |
+            echo "Total files: $(find out -type f | wc -l)"
+            echo "Total size:  $(du -sh out | cut -f1)"
+            echo "Top 10 directories by file count:"
+            find out -type f -printf '%h\n' | sort | uniq -c | sort -rn | head -10
+            echo "File counts by extension:"
+            find out -type f -name '*.*' | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -10
+      - run:
           name: Install Wrangler
           command: npm install --no-save wrangler@latest
       - run:
