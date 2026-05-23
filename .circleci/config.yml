@@ -30,12 +30,21 @@ jobs:
             find out -type f -printf '%h\n' | sort | uniq -c | sort -rn | head -10
             echo "File counts by extension:"
             find out -type f -name '*.*' | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -10
+            echo "Sample route folder contents (out/solutions/3d-modeling-services if present):"
+            ls -la out/solutions/3d-modeling-services 2>/dev/null || ls -la "$(find out/solutions -maxdepth 1 -mindepth 1 -type d | head -1)" 2>/dev/null || true
       - run:
-          name: Trim RSC payloads to stay under Pages 20k file limit
+          name: Trim per-route artifacts to stay under Pages 20k file limit
           command: |
             echo "Before trim: $(find out -type f | wc -l) files"
-            find out -type f -name '*.txt' -delete
-            find out -type f -name '*.rsc' -delete
+            # RSC payloads (soft-nav data)
+            find out -type f \( -name '*.txt' -o -name '*.rsc' \) -delete
+            # Per-route Next.js data/prefetch JSON (kept HTML only in route folders)
+            find out -type f -path 'out/solutions/*' ! -name 'index.html' -delete
+            find out -type f -path 'out/glossary/*' ! -name 'index.html' -delete
+            find out -type f -path 'out/blog/*' ! -name 'index.html' -delete
+            find out -type f -path 'out/case-studies/*' ! -name 'index.html' -delete
+            # Sweep empty dirs left behind
+            find out -type d -empty -delete
             echo "After trim:  $(find out -type f | wc -l) files"
       - run:
           name: Install Wrangler
