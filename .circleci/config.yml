@@ -1,0 +1,48 @@
+version: 2.1
+
+jobs:
+  deploy:
+    docker:
+      - image: cimg/node:20.18
+    working_directory: ~/project/cadcamx-landing
+    steps:
+      - checkout:
+          path: ~/project
+      - restore_cache:
+          keys:
+            - v1-deps-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - save_cache:
+          key: v1-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+      - run:
+          name: Build Next.js static export
+          command: npm run build
+      - run:
+          name: Install Wrangler
+          command: npm install --no-save wrangler@latest
+      - run:
+          name: Deploy to Cloudflare Pages
+          command: |
+            BRANCH_FLAG=""
+            if [ "$CIRCLE_BRANCH" != "main" ]; then
+              BRANCH_FLAG="--branch=$CIRCLE_BRANCH"
+            fi
+            npx wrangler pages deploy out \
+              --project-name="$CLOUDFLARE_PAGES_PROJECT" \
+              --commit-hash="$CIRCLE_SHA1" \
+              --commit-message="$(git log -1 --pretty=%s)" \
+              $BRANCH_FLAG
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - main
+                - claude/circleci-cloudflare-pages-deploy-4badX
